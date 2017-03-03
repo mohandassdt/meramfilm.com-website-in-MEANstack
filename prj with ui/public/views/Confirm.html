@@ -1,0 +1,89 @@
+<div class="container" style="overflow:hidden;">
+  <button class="btn btn-info btn-block">CONFIRMATION PAGE</button>
+
+<div class="table-responsive">
+  <table class="table">
+    <tr>
+      <td><b>BOOKING ID</b></td>
+      <td>
+      <p>{{confirmInfo.bookingid}}</p>
+    </td>
+    </tr>
+
+  <tr>
+    <td><b>Movie title</b></td>
+    <td>
+    <p>{{confirmInfo.Title}}</p>
+</td>
+</tr>
+<tr>
+  <td><b>City</b></td>
+  <td>
+  <p>{{confirmInfo.CityName}}</p>
+</td>
+</tr>
+
+<tr>
+  <td><b>Theater</b></td>
+  <td>
+  <p>{{confirmInfo.HallName}}</p>
+</td>
+</tr>
+
+<tr>
+  <td><b>Date</b></td>
+  <td>
+  <p>{{confirmInfo.Day}}</p>
+</td>
+</tr>
+
+<tr>
+  <td><b>Show Time</b></td>
+  <td>
+  <p>{{confirmInfo.ShowTime}}</p>
+</td>
+</tr>
+
+<tr>
+  <td><b>no of seats</b></td>
+  <td>
+  <p>{{confirmInfo.NumberOfSeats}}</p>
+</td>
+
+<tr>
+  <td><b>Seat Number</b></td>
+  <td>
+  <p>{{confirmInfo.seatnumbers}}</p>
+</td>
+</tr>
+<tr>
+  <td><b>Total Amount</b></td>
+  <td>
+  <p>{{confirmInfo.totalAmnt}}</p>
+</td>
+</tr></table>
+<div class="col-md-7">
+<form class="form" name="myForm" ng-submit="ConfirmBook(confirmlist)">
+  <label><b>User Name</b></label>
+
+  <input class="form-control" type="text" ng-model="confirm.cnUser" required>
+
+  <label><b>Mail ID</b></label>
+  <td>
+  <input class="form-control" type="email" ng-model="confirm.cnMail" required>
+
+  <label><b>ACNT.NO</b></label>
+
+  <input class="form-control" type="text" required>
+
+  <label><b>CVV</b></label>
+
+  <input class="form-control" type="text" required>
+
+
+<button type="submit" ng-disabled="myForm.$invalid" class="btn btn-success">CONFIRM</button>
+</form>
+
+
+</div>
+</div>

@@ -1,0 +1,150 @@
+
+
+
+<div class="container" style="overflow:hidden;">
+
+
+
+<img src="{{movieinfo.Poster}}" style="width:300px;height:400px;float: left;">
+
+
+
+
+
+
+<div class="table-responsive">
+  <table class="table">
+  <tr>
+    <td><b>Movie title</b></td>
+    <td>
+    <p>{{movieinfo.Film}}</p>
+</td>
+  <!-- <td>ng-model="book.FilmName"{{movieinfo.moviTitle}} </td> -->
+</tr>
+
+<tr>
+  <td><b>Select City</b></td>
+  <td><select id="select" class="form-control" style="width:30%;"ng-model="book.CityName" ng-change="sel()" required>
+        <option ng-repeat="l in locMovie" value="{{l}}" >{{l}}</option>
+  </select></td>
+  <!-- <td><select ng-blur="e()" ng-model="book.CityName">
+        <option id="cityNames"></option>
+  </select></td> -->
+</tr>
+<tr>
+  <td><b>Select Theater</b></td>
+  <td><select ng-model="book.HallName" class="form-control" style="width: 30%;"   required>
+        <option ng-repeat="t in loctheat" value="{{t}}">{{t}}</option>
+  </select></td>
+</tr>
+<tr>
+  <td><b>Select Date</td>
+    <td><select ng-model="book.Day" class="form-control" style="width: 30%;" ng-change="tick()"   required>
+          <option ng-repeat="map in maplist|filter:movieinfo.Film|filter:book.HallName|unique:'From'" value="{{map.From}}">{{map.From}}</option>
+    </select></td>
+    <!--    <td> <ul><li ng-repeat="d in singleDate"  style="padding:12px;"><label  id="datebook" ng-click="tick()">{{d}}</label></li></ul></td> -->
+    <!-- <td><a ng-click="tick()" id="datebook" style="padding:12px;" ng-repeat="d in singleDate" >{{d}}</a></td> -->
+      <!-- <td><a ng-click="tick()" id="datebook" style="padding:12px;" ng-repeat="map in maplist|filter:movieinfo.Film|filter:book.HallName|unique:'From'" >{{map.From}}</a></td> -->
+  <!-- <td> <input ng-blur="tick()" type="date" id="datebook" required/></td> -->
+ </tr>
+ <tr>
+   <td><b>Select Show Time</b></td>
+   <td>
+  <select ng-model="book.ShowTime"class="form-control" style="width:30%;" ng-change="showseat()" required>
+        <option ng-repeat="s in Showtime" value="{{s}}">{{s}}</option>
+  </select></td>
+</tr>
+<tr>
+  <td><b>Amount</b></td>
+  <td>
+    <p>150</p>
+</td>
+
+</tr>
+
+<!-- <tr>
+  <td><b>Select Number Of Tickets</b></td>
+  <td>
+ <select ng-model="book.NoTickets">
+        <option>1</option>
+       <option>2</option>
+       <option>3</option>
+       <option>4</option>
+       <option>5</option>
+
+ </select></td>
+
+</tr> -->
+
+
+
+<tr>
+  <td>
+    <!-- <p><button id="generate">Generate</button></p> -->
+<!-- <p><code id="output"></code></p> -->
+  </td>
+  <td>
+      <button ng-click="add()" class="btn btn-primary">Done</button>
+  </td>
+</tr>
+<!--
+<tr>Book
+  <td><b>total Amount</b></td>
+<td><p>{{Totalamount}}</p></td>
+</tr> -->
+
+</table>
+</div>
+
+
+
+
+
+<div  ng-show="seat">
+<table class="seatLayout"style="margin-top:1%;">
+
+      <div style="margin-left:5%;margin-top:7%;">
+        <img src="img/seat2.gif" style="width:30px;height:30px;">Available
+        <img src="img/seat1.gif" style="width:30px;height:30px;">Reserved
+      </div>
+    <tbody>
+      <tr>
+            <td></td>
+            <td ng-repeat="col in cols track by $index" ng-bind="col"></td>
+        </tr>
+        <tr class="tablestyle" ng-repeat="row in rows">
+            <td ng-bind="row"></td>
+            <td ng-repeat="col in cols" ng-click="seatClicked(row + col)"  ng-switch on="getStatus(row + col)" ng-disabled="disableSeat" style="padding: 5px 5px 5px 5px;">
+                <img ng-switch-when="selected" src="img/seat1.gif" style="width:25px;height:25px;">
+                <img ng-switch-when="reserved" src="img/seat1.gif" style="width:25px;height:25px;">
+                <img ng-switch-default src="img/seat2.gif" style="width:25px;height:25px;">
+                <!-- <img id="myImage" ng-switch-default src="img/seat2.gif" style="width:25px;height:25px;"> -->
+
+            </td>
+        </tr>
+        </tbody>
+        </table>
+
+<div style="background-color:black;width:31%;">
+<h4 style="color:white;text-align:center">SCREEN</h4> </div>
+<div class="table-responsive">
+  <table class="table">
+  <tr>
+    <td><b>Seating Arrangement</b></td>
+  <td><p id="seatno"></p></td>
+  </tr>
+
+  <tr>
+    <td><b>No Of seats</b></td>
+  <td><p>{{book.NumberOfSeats}}</p></td></tr>
+  <!-- <tr>
+    <td><b>booking id</b></td>
+  <td><p><code id="output"></code></p></td>
+  </tr> -->
+  <tr>
+<td>  <button ng-click="bk(Booklist)" class="btn btn-primary">Confirm</button></td>
+</tr>
+</table>
+</div>
+</div>
+</div>

@@ -1,0 +1,28 @@
+
+
+<div class="container" style="overflow:hidden;">
+<div class="row content ">
+    <button class="btn btn-info btn-block"><h4>LOG IN</h4></button>
+    <div class="row">
+
+<div class="col-md-4" style="margin-top: 4%;">
+
+
+  <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+  <form class="form" ng-submit="login()">
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" class="form-control" name="username" ng-model="loginForm.username" required>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+        <input type="password" class="form-control" name="password" ng-model="loginForm.password" required>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-success" ng-disabled="disabled">Login</button>
+      </div>
+  </form>
+  <a href="#/register">Signup</a>
+</div>
+</div>
+</div>

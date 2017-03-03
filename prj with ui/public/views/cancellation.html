@@ -1,0 +1,61 @@
+<div class="container" style="overflow:hidden;">
+<!-- <div class="jumbotron">
+  <h1>CANCELLATION</h1>
+</div> -->
+<button class="btn btn-info btn-block"><h4>CANCELLATION</h4></button>
+
+<div class="table-responsive">
+  <table class="table">
+<tr>
+  <td>BOOKING ID</td>
+  <td><input type="text" ng-model="idNo"></td>
+
+  </tr>
+  <tr>
+    <td>MOVIE NAME</td>
+    <td><input type="text" ng-model="movie"></td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+    <td>
+      <button type="button" ng-click="showdetails()" class="btn btn-danger">CHECK DETAILS</button>
+    </td>
+
+  </tr>
+
+ </table>
+
+<div ng-show="showd">
+
+     <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>TITLE</th>
+        <th>CITY</th>
+        <th>THEATER</th>
+        <th>DATE</th>
+        <th>SHOW TIME</th>
+        <th>SEAT NO</th>
+      <th>AMOUNT</th></tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>{{cancellist.Title}}</td>
+       <td>{{cancellist.cnCityName}}</td>
+       <td>{{cancellist.cnHallName}}</td>
+       <td>{{cancellist.cnDay}}</td>
+       <td>{{cancellist.cnShowTime}}</td>
+        <td>{{cancellist.cnseatnumbers}}</td>
+        <td>{{cancellist.cnAmount}}</td>
+       <td><button type="button" ng-click="cancelBook(cancellist)" class="btn btn-danger">CANCEL</button></td>
+
+     </tr>
+   </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+</div>
