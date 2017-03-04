@@ -74,11 +74,11 @@
 
   <label><b>ACNT.NO</b></label>
 
-  <input class="form-control" type="text" required>
+  <input class="form-control" ng-model="confirm.acnt" minlength="12" type="text" required>
 
   <label><b>CVV</b></label>
 
-  <input class="form-control" type="text" required>
+  <input class="form-control" ng-model="confirm.cvv" type="text" maxlength="3" required>
 
 
 <button type="submit" ng-disabled="myForm.$invalid" class="btn btn-success">CONFIRM</button>

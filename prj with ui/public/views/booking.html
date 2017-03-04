@@ -50,7 +50,7 @@
 </style>
 
 </head>
-<div class="container" style="overflow:hidden;>
+<div class="container" style="overflow:hidden;">
 <div class="row ">
 <div class="col-sm-12" role="tabpanel">
 <div class="[ col-xs-4 col-sm-12 ]">
@@ -101,9 +101,10 @@
 <div style="margin-left: 28%;margin-top: -4%;">
 
         <button type="submit" ng-disabled="myForm.$invalid" class="btn btn-primary">Add Time</button>
-        <button ng-click="updateShow()" class="btn btn-primary">Update</button>
-      </div>
-  </form>
+
+        <td><button type="button" ng-click="updateShow()" class="btn btn-primary">Update</button></td>
+      </div>  </form>
+
 
     <table class="table" style="margin-top: 17px;">
   <tr ng-repeat="tim in timlist">
@@ -129,7 +130,7 @@
 <div style="margin-left: 28%;margin-top: -4%;">
         <!-- <button type="submit" class="btn btn-success" ng-disabled="disabled">Register</button> -->
         <button type="submit" ng-disabled="myFormTH.$invalid" class="btn btn-primary">Add City</button>
-        <button type="submit" ng-disabled="disabled"ng-click="updateCity()" class="btn btn-primary">Update</button>
+        <button type="button" ng-click="updateCity()" class="btn btn-primary">Update</button>
       </div>
   </form>
   <table class="table" style="margin-top: 17px;">
@@ -168,7 +169,7 @@
             <select id="time" ng-model="thtre.showTime" multiple class="form-control" style="width:15%;" required></select></div>
             <div style="margin-left:62%;margin-top:-5.4%;">
         <button type="submit" ng-disabled="myFormTheater.$invalid"  class="btn btn-primary">Add</button>
-        <button type="submit"  ng-click="updateTheater()" class="btn btn-primary">Update</button>
+        <button type="button" ng-click="updateTheater()" class="btn btn-primary">Update</button>
       </div>
   </form>
   <table class="table" style="margin-top:90px;">
@@ -202,7 +203,7 @@
 </div>
 <div style="margin-left:29%;margin-top:-3%;">
 <button type="submit" ng-disabled="myFormMovie.$invalid"  class="btn btn-primary">Add </button>
-<button ng-click="updateMovie()"  class="btn btn-primary">Update</button>
+<button type="button" ng-click="updateMovie()"  class="btn btn-primary">Update</button>
 </div>
 </form>
 <table>
@@ -235,7 +236,7 @@
       <option ng-repeat="m in moviList">{{m.moviTitle}}</option>
       </select></div>
 
-  <div  class="form-group" style="width: 16%;">
+  <div  class="form-group" style="width:16%;">
       <label>Language</label>
   <input type="text" class="form-control" name="lang" ng-model="map.Language" required >
 
@@ -255,7 +256,7 @@
 
 <div ng-show="seldt" style="width: 16%;">
   <label>Date</label>
- <input type="date" id="mapdate" ng-change="d()" ng-model="map.From"/>
+ <input class="form-control" type="date" id="mapdate" ng-change="f()" ng-model="map.From"/>
 
 
  <!-- <input type="date" ng-model="map.From"  datepicker /> -->
@@ -275,7 +276,7 @@
   <div style="margin-left:29%;margin-top:-3%;">
       <button type="submit" class="btn btn-success" ng-disabled="myFormmp.$invalid">Add</button>
   <!-- <button id="btn" ng-click="addMap()"  class="btn btn-primary">Add </button> -->
-  <button ng-click="updateMap()" class="btn btn-primary">Update</button>
+  <button type="button" ng-click="updateMap()" class="btn btn-primary">Update</button>
   </div>
   <div>
 </div>

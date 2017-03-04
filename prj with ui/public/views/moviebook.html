@@ -12,89 +12,48 @@
 
 
 
-<div class="table-responsive">
-  <table class="table">
-  <tr>
-    <td><b>Movie title</b></td>
-    <td>
-    <p>{{movieinfo.Film}}</p>
-</td>
-  <!-- <td>ng-model="book.FilmName"{{movieinfo.moviTitle}} </td> -->
-</tr>
+<div>
+<form class="form" name="myFormBook" style="margin-left: 35%;" ng-submit="add()">
 
-<tr>
-  <td><b>Select City</b></td>
-  <td><select id="select" class="form-control" style="width:30%;"ng-model="book.CityName" ng-change="sel()" required>
+
+    <label>Movie title</label>
+
+    <h4>{{movieinfo.Film}}</h4>
+
+<label>Select City</label>
+<select id="select" class="form-control" style="width:30%;"ng-model="book.CityName" ng-change="sel()" required>
         <option ng-repeat="l in locMovie" value="{{l}}" >{{l}}</option>
-  </select></td>
-  <!-- <td><select ng-blur="e()" ng-model="book.CityName">
-        <option id="cityNames"></option>
-  </select></td> -->
-</tr>
-<tr>
-  <td><b>Select Theater</b></td>
-  <td><select ng-model="book.HallName" class="form-control" style="width: 30%;"   required>
+  </select>
+
+
+<label>Select Theater</label>
+<select ng-model="book.HallName" class="form-control" style="width: 30%;"   required>
         <option ng-repeat="t in loctheat" value="{{t}}">{{t}}</option>
-  </select></td>
-</tr>
-<tr>
-  <td><b>Select Date</td>
-    <td><select ng-model="book.Day" class="form-control" style="width: 30%;" ng-change="tick()"   required>
+  </select>
+
+<label>Select Date</label>
+<select ng-model="book.Day" class="form-control" style="width: 30%;" ng-change="tick()"   required>
           <option ng-repeat="map in maplist|filter:movieinfo.Film|filter:book.HallName|unique:'From'" value="{{map.From}}">{{map.From}}</option>
-    </select></td>
-    <!--    <td> <ul><li ng-repeat="d in singleDate"  style="padding:12px;"><label  id="datebook" ng-click="tick()">{{d}}</label></li></ul></td> -->
-    <!-- <td><a ng-click="tick()" id="datebook" style="padding:12px;" ng-repeat="d in singleDate" >{{d}}</a></td> -->
-      <!-- <td><a ng-click="tick()" id="datebook" style="padding:12px;" ng-repeat="map in maplist|filter:movieinfo.Film|filter:book.HallName|unique:'From'" >{{map.From}}</a></td> -->
-  <!-- <td> <input ng-blur="tick()" type="date" id="datebook" required/></td> -->
- </tr>
- <tr>
-   <td><b>Select Show Time</b></td>
-   <td>
+    </select>
+
+ <label>Select Show Time</label>
+
   <select ng-model="book.ShowTime"class="form-control" style="width:30%;" ng-change="showseat()" required>
         <option ng-repeat="s in Showtime" value="{{s}}">{{s}}</option>
-  </select></td>
-</tr>
-<tr>
-  <td><b>Amount</b></td>
-  <td>
+  </select>
+
+<b>Amount</b>
+
     <p>150</p>
-</td>
-
-</tr>
-
-<!-- <tr>
-  <td><b>Select Number Of Tickets</b></td>
-  <td>
- <select ng-model="book.NoTickets">
-        <option>1</option>
-       <option>2</option>
-       <option>3</option>
-       <option>4</option>
-       <option>5</option>
-
- </select></td>
-
-</tr> -->
 
 
 
-<tr>
-  <td>
-    <!-- <p><button id="generate">Generate</button></p> -->
-<!-- <p><code id="output"></code></p> -->
-  </td>
-  <td>
-      <button ng-click="add()" class="btn btn-primary">Done</button>
-  </td>
-</tr>
-<!--
-<tr>Book
-  <td><b>total Amount</b></td>
-<td><p>{{Totalamount}}</p></td>
-</tr> -->
 
-</table>
+      <button type="submit" ng-disabled="myFormBook.$invalid" class="btn btn-primary">Done</button>
+
+</form>
 </div>
+
 
 
 
